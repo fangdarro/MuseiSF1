@@ -47,4 +47,12 @@
       width: 70%;
       height: 65rem;
      
+  } 
+
+  .nav-link {
+      color: white;
+  } 
+
+  .nav-link:hover {
+      color:rgb(rgb(143, 213, 235), green, blue);
   }
