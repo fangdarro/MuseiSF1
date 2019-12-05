@@ -41,6 +41,9 @@ function getParameterByName(name, url) {
     `;
   };
 
+  function formattedString(value) {
+    return value.split(",").join("<li>");
+  }
   /* function addCard (fields){
       $(".card-deck").append(`<div class="card" style="width: 18rem;">
       <img class="card-img-top" src="` +   fields["Museum Logo"][0].thumbnails.large.url +`" alt="Track image cap">
@@ -168,29 +171,32 @@ var viewMuseum = function(fields) { */
     
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
-    <a class="nav-link active" id="location-tab" data-toggle="tab" href="#1a" role="tab" aria-controls="#1a" aria-selected="true">Location</a>
+    <a class="nav-link active" id="location-tab" data-toggle="tab" href="#a1" role="tab" aria-controls="#a1" aria-selected="true">Location</a>
       </li>
       <li class="nav-item">
-    <a class="nav-link" id="hours-tab" data-toggle="tab" href="#1b" role="tab" aria-controls="#1b" aria-selected="false">Hours</a>
+    <a class="nav-link" id="hours-tab" data-toggle="tab" href="#b1" role="tab" aria-controls="#b1" aria-selected="false">Hours</a>
       </li>
       <li class="nav-item">
-    <a class="nav-link" id="admission-tab" data-toggle="tab" href="#1c" role="tab" aria-controls="#1c" aria-selected="false">Admission</a>
+    <a class="nav-link" id="admission-tab" data-toggle="tab" href="#c1" role="tab" aria-controls="#c1" aria-selected="false">Admission</a>
       </li>
       <li class="nav-item">
-    <a class="nav-link" href="#1d" data-toggle="tab">Media</a>
+    <a class="nav-link" id="types-tab" href="#d1" data-toggle="tab" role="tab" aria-controls="#d1" aria-selected="false">Type of Media</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="#1e" data-toggle="tab">Featured Exhibitions</a>
+      <a class="nav-link" href="#e1" id="featured-tab" data-toggle="tab" role="tab" aria-controls="#e1" aria-selected="false">Featured</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="#1f" data-toggle="tab">Website</a>
+      <a class="nav-link" href="#f1" id="website-tab" data-toggle="tab" role="tab" aria-controls="#f1" aria-selected="false">Website</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="#1g" data-toggle="tab">Contact Information</a>
+      <a class="nav-link" href="#g1" id="phone-tab" data-toggle="tab" role="tab" aria-controls="#g1" aria-selected="false">Phone Number</a>
+      </li> 
+      <li class="nav-item">
+      <a class="nav-link" href="#h1" id="email-tab" data-toggle="tab" role="tab" aria-controls="#h1" aria-selected="false">E-mail</a>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="1a" role="tabpanel" aria-labelledby="location-tab">
+    <div class="tab-pane fade show active" id="a1" role="tabpanel" aria-labelledby="location-tab">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">`;
     for (var i=0; i < images.length; i++) {
@@ -210,25 +216,32 @@ var viewMuseum = function(fields) { */
     </a>
   </div>
   <h3${name}</h3>
-  <h3>${location}</h3>
+  <h3 style="margin-left: 42%; color: white; background-color: emerald; margin-right: 38%; text-align: center;">${location}</h3>
     </div>
   
   
     
-  <div class="tab-pane" id="1b" role="tabpanel" aria-labelledby="hours-tab">
-  <p>h</p>
+  <div class="tab-pane" id="b1" role="tabpanel" aria-labelledby="hours-tab">
+  <h3 style="color: white; background-color: teal blue; width: 26rem;">${formattedString(hours)}</h3>
   </div>
-  <div class="tab-pane" id="1c" ole="tabpanel" aria-labelledby="admission-tab>
+  <div class="tab-pane" id="c1" role="tabpanel" aria-labelledby="admission-tab">
+  <h3 style="color: white"; background-color: teal blue; width: 26rem;"> ${formattedString(admission)}</h3>
   </div>
-  <div class="tab-pane" id="1d">
+  <div class="tab-pane" id="d1" role="tabpanel" aria-labelledby="types-tab">
+  <h3 style="color: white"; background-color: teal blue; width: 26rem;"> ${formattedString(types)}</h3>
   </div>
-  <div class="tab-pane" id="1e">
+  <div class="tab-pane" id="e1" role="tabpanel" aria-labelledby="Featured-tab">
+  <h3 style="color: white"; background-color: teal blue; width: 26rem;"> ${formattedString(featured)}</h3>
   </div>
-  <div class="tab-pane" id="1f">
+  <div class="tab-pane" id="f1" role="tabpanel" aria-labelledby="website-tab">
+  <h3 style="color: white"; background-color: teal blue; width: 26rem;"> ${formattedString(website)}</h3>
   </div>
-  <div class="tab-pane" id="1g">
+  <div class="tab-pane" id="g1" role="tabpanel" aria-labelledby="phone-tab">
+  <h3 style="color: white"; background-color: teal blue; width: 26rem;"> ${formattedString(phone)}</h3>
   </div>
-          
+  <div class="tab-pane" id="h1" role="tabpanel" aria-labelledby="email-tab">
+  <h3 style="color: white"; background-color: teal blue; width: 26rem;"> ${formattedString(email)}</h3>
+  </div>        
             
         
         
